@@ -17,7 +17,7 @@ function AdminPanel() {
 
     if (token) {
       axios
-        .get("http://booking-front-end-pearl.vercel.app/api/admin", {
+        .get("http://localhost:4000/api/admin", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then(() => {

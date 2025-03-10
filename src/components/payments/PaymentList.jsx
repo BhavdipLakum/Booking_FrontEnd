@@ -79,7 +79,7 @@ const TIMEFRAME_OPTIONS = [
 
 // API endpoints configuration
 const API_CONFIG = {
-  baseURL: "http://booking-front-end-pearl.vercel.app/api",
+  baseURL: "http://localhost:4000/api",
   payments: "/payments",
   bookings: "/bookings",
 };

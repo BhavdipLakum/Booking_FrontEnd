@@ -47,15 +47,15 @@ const FinancialSummary = () => {
         const headers = { Authorization: `Bearer ${token}` };
 
         const revenueRes = await axios.get(
-          "http://booking-front-end-pearl.vercel.app/api/payments",
+          "http://localhost:4000/api/payments",
           { headers }
         );
         const expensesRes = await axios.get(
-          "http://booking-front-end-pearl.vercel.app/api/expenses",
+          "http://localhost:4000/api/expenses",
           { headers }
         );
         const bookingsRes = await axios.get(
-          "http://booking-front-end-pearl.vercel.app/api/bookings",
+          "http://localhost:4000/api/bookings",
           { headers }
         );
 

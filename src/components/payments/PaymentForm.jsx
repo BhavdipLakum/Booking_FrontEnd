@@ -26,14 +26,11 @@ const PaymentForm = () => {
     const fetchBookings = async () => {
       try {
         const token = localStorage.getItem("token"); // Token ko localStorage se le raha hai
-        const res = await axios.get(
-          "http://booking-front-end-pearl.vercel.app/api/bookings",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`, // Token add kiya header me
-            },
-          }
-        );
+        const res = await axios.get("http://localhost:4000/api/bookings", {
+          headers: {
+            Authorization: `Bearer ${token}`, // Token add kiya header me
+          },
+        });
 
         if (Array.isArray(res.data)) {
           setBookings(res.data);
@@ -71,7 +68,7 @@ const PaymentForm = () => {
         const fetchBookingDetails = async () => {
           try {
             const res = await axios.get(
-              `http://booking-front-end-pearl.vercel.app/api/bookings/${value}`,
+              `http://localhost:4000/api/bookings/${value}`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -128,7 +125,7 @@ const PaymentForm = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://booking-front-end-pearl.vercel.app/api/payments",
+        "http://localhost:4000/api/payments",
         {
           bookingId: formData.bookingId,
           amount: formData.amount,

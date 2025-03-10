@@ -34,7 +34,7 @@ const BookingForm = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get(
-        `http://booking-front-end-pearl.vercel.app/api/bookings/${bookingId}`,
+        `http://localhost:4000/api/bookings/${bookingId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -102,7 +102,7 @@ const BookingForm = () => {
 
       if (id && id !== "new") {
         await axios.put(
-          `http://booking-front-end-pearl.vercel.app/api/bookings/${id}`,
+          `http://localhost:4000/api/bookings/${id}`,
           {
             ...formData,
             pendingAmount,
@@ -112,7 +112,7 @@ const BookingForm = () => {
         );
       } else {
         const res = await axios.post(
-          `http://booking-front-end-pearl.vercel.app/api/bookings`,
+          `http://localhost:4000/api/bookings`,
           {
             ...formData,
             pendingAmount,

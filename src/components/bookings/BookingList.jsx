@@ -40,13 +40,10 @@ const BookingList = () => {
         console.log("API Call with params:", params); // Debugging
 
         const token = localStorage.getItem("token");
-        const res = await axios.get(
-          "http://booking-front-end-pearl.vercel.app/api/bookings",
-          {
-            params,
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        const res = await axios.get("http://localhost:4000/api/bookings", {
+          params,
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
         console.log("API Response:", res.data); // Debugging Response
 
@@ -72,12 +69,9 @@ const BookingList = () => {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(
-        `http://booking-front-end-pearl.vercel.app/api/bookings/${bookingId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      await axios.delete(`http://localhost:4000/api/bookings/${bookingId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
       setBookings((prevBookings) =>
         prevBookings.filter((booking) => booking._id !== bookingId)
