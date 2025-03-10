@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply dark:bg-slate-900 dark:text-gray-200 bg-gray-100 text-gray-900 font-sans;
+    @apply min-h-screen
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link:hover {
+    color: #ffeb3b !important;
+    transform: scale(1.1);
+  }
+  
+  /* Sidebar Animation */
+  .sidebar-animated {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sidebar-link {
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  .sidebar {
+    width: 250px;
+    min-height: 100vh;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sidebar.hide {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+  
+  .sidebar-link {
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  .main-content {
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  /* Navbar Shadow */
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button Hover Effects */
+  button:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Responsive Sidebar */
+  @media (max-width: 768px) {
+    .sidebar {
+      /* position: absolute; */
+      left: 0;
+      top: 56px; /* Navbar height */
+      height: calc(100vh - 56px);
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+    }
+  
+    .sidebar.hide {
+      left: -250px;
+    }
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-start;
+    z-index: 1050;
+  }
+  
+  .sidebar {
+    margin-top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #1e3363;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* position: relative; */
+    color: white;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 125px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .profile-section {
+    text-align: center;
+  }
+  
+  .profile-section img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .menu-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-items li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-items a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .menu-items a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .navbar .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Sab kuch ek hi row me rahega */
+  }
+  
