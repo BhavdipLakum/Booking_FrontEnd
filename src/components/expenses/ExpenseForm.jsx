@@ -27,7 +27,7 @@ const ExpenseForm = () => {
   useEffect(() => {
     if (isEditMode) {
       axios
-        .get(`http://localhost:4000/api/expenses/${id}`)
+        .get(`http://booking-front-end-pearl.vercel.app/api/expenses/${id}`)
         .then((response) => {
           setFormData(response.data);
           if (response.data.receipt) {
@@ -81,16 +81,20 @@ const ExpenseForm = () => {
     try {
       if (isEditMode) {
         await axios.put(
-          `http://localhost:4000/api/expenses/${id}`,
+          `http://booking-front-end-pearl.vercel.app/api/expenses/${id}`,
           submitData,
           {
             headers: { "Content-Type": "multipart/form-data" },
           }
         );
       } else {
-        await axios.post("http://localhost:4000/api/expenses", submitData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        await axios.post(
+          "http://booking-front-end-pearl.vercel.app/api/expenses",
+          submitData,
+          {
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        );
       }
       navigate("/expenses");
     } catch (err) {

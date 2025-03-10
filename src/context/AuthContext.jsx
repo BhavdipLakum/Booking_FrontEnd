@@ -18,9 +18,12 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await axios.get("http://localhost:4000/api/admin", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(
+          "http://booking-front-end-pearl.vercel.app/api/admin",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
 
         setUser(response.data.user || { isAuthenticated: true });
       } catch (error) {
@@ -38,7 +41,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/admin/login",
+        "http://booking-front-end-pearl.vercel.app/api/admin/login",
         credentials
       );
       if (res.data && res.data.token) {
